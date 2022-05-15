@@ -59,11 +59,13 @@ class ViewController: UIViewController {
 //        }
 //
         
+//    HomeWork 2
+        let hw2 = task2()
         //        1. Универсальные функции сложения, вычитания, умножения и деления (перегрузка функций).
-        minus(a: 8, b: 12)
-        minus(a: 8.0, b: 12.0)
-        minus(a: 8.0, b: 12.0, ctr: 34)
-        minus(a: 1, b: 10, c:200)
+        hw2.minus(a: 8, b: 12)
+        hw2.minus(a: 8.0, b: 12.0)
+        hw2.minus(a: 8.0, b: 12.0, ctr: 34)
+        hw2.minus(a: 1, b: 10, c:200)
         
         //        let budjet = convUSD(byn: 10.0, curs: 2.59)
         //        print(budjet)
@@ -76,10 +78,10 @@ class ViewController: UIViewController {
         
         var total:Int
         
-        total  = (sum4(p_chi: &chislo))
-        total += (sum4(p_chi: &chislo))
-        total += (sum4(p_chi: &chislo))
-        total += (sum4(p_chi: &chislo))
+        total  = (hw2.sum4(p_chi: &chislo))
+        total += (hw2.sum4(p_chi: &chislo))
+        total += (hw2.sum4(p_chi: &chislo))
+        total += (hw2.sum4(p_chi: &chislo))
         
         print(total) // сумма цифр четырехзначного числа
         print(chislo)
@@ -87,10 +89,10 @@ class ViewController: UIViewController {
         //        3. Функция сравнения строк – «авб» больше «ввш».
         
         
-        srav(p_str1: "авб", p_str2: "ввш")
+        hw2.srav(p_str1: "авб", p_str2: "ввш")
         
 //        4. Циклический вызов функций – поломать приложение.
-//        crash()
+//        hw2.crash()
 //    Результат:Details
 //
 //        Could not attach to pid : “26993”
@@ -101,14 +103,19 @@ class ViewController: UIViewController {
         
 //        5. Функция возведения в степень с дефолтным параметром.
        
-        vozv(chislo: 3.0)
+        hw2.vozv(chislo: 3.0)
         
 //        6. Функция вычисления факториала числа
-        var f:Int = factorial(5)
+        let f:Int = hw2.factorial(5)
         print(f)
         
     }
 
+    
+    
+}
+//
+class task2{
     //    1. Универсальные функции сложения, вычитания, умножения и деления (перегрузка функций).
     func minus(a:Int, b:Int) {
         print(a-b)
@@ -162,7 +169,7 @@ class ViewController: UIViewController {
 //    5. Функция возведения в степень с дефолтным параметром.
     
     func vozv(chislo:Double, step:Double = 2){
-        var a:Double = pow(Double(chislo),step)
+        let a:Double = pow(Double(chislo),step)
         print(a)
     }
 //    6. Функция вычисления факториала числа
@@ -174,6 +181,7 @@ class ViewController: UIViewController {
         }
    
     }
-    
+
+
+
 }
-//
