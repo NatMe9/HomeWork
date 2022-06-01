@@ -17,8 +17,11 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var tfStorona: UITextField!
-    
-
+        
+    @IBAction func FillSquares(_ sender: Any) {
+        fillKvadratikami()
+        
+    }
     private func fillKvadratikami() {
         var StoronaKvadrata: Double = Double(tfStorona.text ?? "") ?? 10
         print(StoronaKvadrata)
@@ -57,11 +60,6 @@ class ViewController: UIViewController {
                 view.addSubview(kvadratik)
             }
         }
-    }
-    
-    @IBAction func FillSquares(_ sender: Any) {
-        fillKvadratikami()
-        
     }
     
 }
