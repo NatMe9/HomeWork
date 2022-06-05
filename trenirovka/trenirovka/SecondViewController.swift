@@ -25,8 +25,8 @@ class SecondViewController: UIViewController {
         
         view.addSubview(secondButten)
         NSLayoutConstraint.activate([
-            secondButten.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
-            secondButten.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -20),
+            secondButten.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -400),
+            secondButten.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             secondButten.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             secondButten.heightAnchor.constraint(equalToConstant: 20)
         ])
@@ -41,7 +41,7 @@ class SecondViewController: UIViewController {
     private func makeSecondButten() -> UIButton{
      let button2 = UIButton()
         button2.backgroundColor = .purple
-        button2.setTitle("Верни", for: .normal)
+        button2.setTitle("Верни1", for: .normal)
         button2.translatesAutoresizingMaskIntoConstraints = false
         return button2
     }

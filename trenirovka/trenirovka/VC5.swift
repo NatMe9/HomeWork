@@ -25,8 +25,8 @@ class VC5: UIViewController {
         
         view.addSubview(butten5)
         NSLayoutConstraint.activate([
-            butten5.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
-            butten5.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -20),
+            butten5.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            butten5.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             butten5.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             butten5.heightAnchor.constraint(equalToConstant: 20)
         ])
