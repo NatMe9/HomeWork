@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         viewController.okras = myCat.okras
         viewController.weight = myCat.weight
         
+        viewController.cat2 = myCat
         
         present(viewController, animated: true )
 
@@ -46,6 +47,6 @@ class cat {
 //           self.breed1 = breed1
 //           self.okras1 = okras1
 //           self.weight1 = weight1
-        
-   //}
+//
+//   }
 }

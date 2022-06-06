@@ -8,14 +8,21 @@
 import Foundation
 
 class Beer {
+// Public prop
+    public var brand: String
+    private var price: Double
+    public var country: String
+    public var ost: Int
     
-    var brand: String
-    var price: Double
-    var country: String
-    var ost: Int
+    public func getPrice ()->Double {
+        return self.price
+    }
+    public func setPrice (newPrice:Double){
+        self.price = newPrice
+    }
     
-
-    init(BRAND: String, PRICE: Double, COUNTRY: String, OST: Int) {
+// Life cycle
+     init(BRAND: String, PRICE: Double, COUNTRY: String, OST: Int) {
         self.brand = BRAND
         self.price = PRICE
         self.country = COUNTRY

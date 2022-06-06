@@ -15,14 +15,17 @@ import UIKit
 
 
 class ViewController: UIViewController {
+   
+    //Public properties
     @IBOutlet weak var Info: UILabel!
     
-    
+    //Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    //Public flow func
     @IBAction func ProdatPivo(_ sender: Any) {
         BeerSeller.seller.sellBeer()
         Info.text = "Пиво продано, заходьте ще"
