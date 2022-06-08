@@ -15,14 +15,24 @@ class SecondViewController: UIViewController {
     public var txt: String = ""
     lazy var secondButten = makeSecondButten()
     
+
     override func viewDidLoad() {
+        let rightBB = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(didLap))
+        navigationItem.rightBarButtonItem = rightBB
+     
         super.viewDidLoad()
-       // tf2.text = txt
+       
+    }
+    
+    @objc private func didLap(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "VC3") as! VC3
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         view.addSubview(secondButten)
         NSLayoutConstraint.activate([
             secondButten.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -400),
@@ -30,14 +40,14 @@ class SecondViewController: UIViewController {
             secondButten.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             secondButten.heightAnchor.constraint(equalToConstant: 20)
         ])
-        
+
         secondButten.addTarget(self, action: #selector(didLapSecondButton), for: .touchUpInside)
     }
     @objc private func didLapSecondButton() {
             dismiss(animated: true)
-                
+
     }
-    
+
     private func makeSecondButten() -> UIButton{
      let button2 = UIButton()
         button2.backgroundColor = .purple
@@ -52,7 +62,8 @@ class SecondViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .flipHorizontal
         viewController.txt = self.txt
-        present(viewController, animated: true )
+        navigationController?.pushViewController(viewController, animated: true)
+//        present(viewController, animated: true )
 
     }
     

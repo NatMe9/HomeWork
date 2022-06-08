@@ -14,8 +14,16 @@ class VC3: UIViewController {
     lazy var butten3 = makeButten3()
     
     override func viewDidLoad() {
+        let rightBB = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(didLap))
+        navigationItem.rightBarButtonItem = rightBB
+        
         super.viewDidLoad()
         
+    }
+    @objc private func didLap(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "VC4") as! VC4
+        navigationController?.pushViewController(viewController, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,7 +58,8 @@ class VC3: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .flipHorizontal
         viewController.txt = self.txt
-        present(viewController, animated: true )
+        navigationController?.pushViewController(viewController, animated: true)
+//        present(viewController, animated: true )
 
     }
     

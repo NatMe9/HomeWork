@@ -20,14 +20,14 @@ class ViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .flipHorizontal
        let myCat = cat()
-        viewController.name = myCat.name
-        viewController.breed = myCat.breed
-        viewController.okras = myCat.okras
-        viewController.weight = myCat.weight
+//        viewController.name = myCat.name
+//        viewController.breed = myCat.breed
+//        viewController.okras = myCat.okras
+//        viewController.weight = myCat.weight
         
         viewController.cat2 = myCat
-        
-        present(viewController, animated: true )
+        navigationController?.pushViewController(viewController, animated: true)
+//        present(viewController, animated: true )
 
     }
 
@@ -43,7 +43,7 @@ class cat {
     var weight:String = "Вес 3.4"
     
 //    init(name1: String, breed1: String, okras1: String, weight1: String ) {
-//           self.name1 = name1
+//           self.name = name
 //           self.breed1 = breed1
 //           self.okras1 = okras1
 //           self.weight1 = weight1

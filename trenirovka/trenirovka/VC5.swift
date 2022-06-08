@@ -18,8 +18,21 @@ class VC5: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let button = UIButton().self
+        button.setTitle("Go to start", for: .normal)
+        button.addTarget(self, action: #selector(didLapToStart), for: .touchUpInside)
+        let rightBB = UIBarButtonItem(customView: button)
+        navigationItem.rightBarButtonItem = rightBB
+        
+        
         tf5.text = txt
     }
+    
+    @objc private func didLapToStart() {
+        navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

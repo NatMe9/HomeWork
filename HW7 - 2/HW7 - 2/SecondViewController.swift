@@ -10,13 +10,13 @@ import UIKit
 class SecondViewController: UIViewController {
    
     
-    var name = ""
-    var breed = ""
-    var okras = ""
-    var weight = ""
+//    var name = ""
+//    var breed = ""
+//    var okras = ""
+//    var weight = ""
     
-    var cat2: cat
-//    var cat2 = cat()
+//    var cat2: cat
+    var cat2 = cat()
     
     
     @IBOutlet weak var label1: UILabel!

@@ -21,9 +21,10 @@ class ViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .flipHorizontal
-     //   viewController.tf2?.text = self.tf1.text
         viewController.txt = self.tf1.text ?? ""
-        present(viewController, animated: true )
+        navigationController?.pushViewController(viewController, animated: true)
+        
+//        present(viewController, animated: true )
 
     }
     @IBAction func showSecondVC(_ sender: Any) {
