@@ -15,8 +15,8 @@ class SecondViewController: UIViewController {
 //    var okras = ""
 //    var weight = ""
     
-//    var cat2: cat
-    var cat2 = cat()
+    var cat2: cat?
+//    var cat2 = cat()
     
     
     @IBOutlet weak var label1: UILabel!
@@ -37,10 +37,10 @@ class SecondViewController: UIViewController {
 //        label3.text = okras
 //        label4.text = weight
  
-        label1.text = cat2.name
-        label2.text = cat2.breed
-        label3.text = cat2.okras
-        label4.text = cat2.weight
+        label1.text = cat2?.name
+        label2.text = cat2?.breed
+        label3.text = cat2?.okras
+        label4.text = cat2?.weight
 
         
     }

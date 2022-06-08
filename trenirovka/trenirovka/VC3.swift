@@ -24,6 +24,7 @@ class VC3: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "VC4") as! VC4
         navigationController?.pushViewController(viewController, animated: true)
+        viewController.txt = self.txt
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

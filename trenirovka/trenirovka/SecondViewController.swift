@@ -28,6 +28,7 @@ class SecondViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "VC3") as! VC3
         navigationController?.pushViewController(viewController, animated: true)
+        viewController.txt = self.txt
     }
     
     override func viewWillAppear(_ animated: Bool) {
