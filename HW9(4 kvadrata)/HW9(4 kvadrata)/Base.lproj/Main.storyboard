@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW9_4_kvadrata_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufA-75-N91" userLabel="Orange">
+                                <rect key="frame" x="20" y="261" width="177" height="177"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-KT-SfW" userLabel="Yellow">
+                                <rect key="frame" x="217" y="261" width="177" height="177"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4F-QJ-C2Q" userLabel="Indigo">
+                                <rect key="frame" x="217" y="64" width="177" height="177"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91z-tS-Cc3" userLabel="Pink">
+                                <rect key="frame" x="20" y="64" width="177" height="177"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-Mo-Sj4">
+                                <rect key="frame" x="75" y="661" width="264" height="31"/>
+                                <color key="backgroundColor" red="0.44313728810000003" green="0.20392158630000001" blue="0.60392159219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="M&amp;M's isHidden"/>
+                                <connections>
+                                    <action selector="Ghmi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xbf-Xq-sxr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ufA-75-N91" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0nl-cv-YuI"/>
+                            <constraint firstItem="tZW-KT-SfW" firstAttribute="height" secondItem="91z-tS-Cc3" secondAttribute="height" id="5EQ-A0-E9w"/>
+                            <constraint firstItem="91z-tS-Cc3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Nr-FW-K4p"/>
+                            <constraint firstItem="z4F-QJ-C2Q" firstAttribute="height" secondItem="91z-tS-Cc3" secondAttribute="height" id="8wg-bZ-hJj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UT2-Mo-Sj4" secondAttribute="trailing" constant="75" id="9eK-UR-7cn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ufA-75-N91" secondAttribute="bottom" constant="424" id="DrR-Sq-NP2"/>
+                            <constraint firstItem="z4F-QJ-C2Q" firstAttribute="width" secondItem="91z-tS-Cc3" secondAttribute="width" id="FEj-Ip-pCB"/>
+                            <constraint firstItem="ufA-75-N91" firstAttribute="top" secondItem="91z-tS-Cc3" secondAttribute="bottom" constant="20" id="KSH-iJ-wDa"/>
+                            <constraint firstItem="UT2-Mo-Sj4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="V8s-TM-kXl"/>
+                            <constraint firstItem="ufA-75-N91" firstAttribute="height" secondItem="91z-tS-Cc3" secondAttribute="height" id="Vn0-MN-NyQ"/>
+                            <constraint firstItem="z4F-QJ-C2Q" firstAttribute="leading" secondItem="91z-tS-Cc3" secondAttribute="trailing" constant="20" id="WM5-j5-BEU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z4F-QJ-C2Q" secondAttribute="trailing" constant="20" id="cdh-C2-MoI"/>
+                            <constraint firstItem="ufA-75-N91" firstAttribute="width" secondItem="91z-tS-Cc3" secondAttribute="width" id="erV-EW-ET4"/>
+                            <constraint firstItem="tZW-KT-SfW" firstAttribute="leading" secondItem="ufA-75-N91" secondAttribute="trailing" constant="20" id="ghN-Jd-hkJ"/>
+                            <constraint firstItem="UT2-Mo-Sj4" firstAttribute="top" secondItem="ufA-75-N91" secondAttribute="bottom" constant="223" id="pT8-p0-c7j"/>
+                            <constraint firstItem="tZW-KT-SfW" firstAttribute="top" secondItem="z4F-QJ-C2Q" secondAttribute="bottom" constant="20" id="r0b-UU-T03"/>
+                            <constraint firstItem="tZW-KT-SfW" firstAttribute="width" secondItem="91z-tS-Cc3" secondAttribute="width" id="uyp-hV-X5n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tZW-KT-SfW" secondAttribute="trailing" constant="20" id="w4q-Oa-eno"/>
+                            <constraint firstItem="91z-tS-Cc3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wJ1-YR-zdI"/>
+                            <constraint firstItem="z4F-QJ-C2Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wbX-zN-qhm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Indigo" destination="z4F-QJ-C2Q" id="25j-pW-2Ng"/>
+                        <outlet property="Orange" destination="ufA-75-N91" id="HYF-DC-A0P"/>
+                        <outlet property="Pink" destination="91z-tS-Cc3" id="DyO-9c-S12"/>
+                        <outlet property="Yellow" destination="tZW-KT-SfW" id="86n-4D-J1P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
