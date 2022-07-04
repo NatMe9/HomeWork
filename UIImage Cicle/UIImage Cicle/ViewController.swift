@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         ygodi.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
         return ygodi
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
     }
-
+    
 }
 extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -55,6 +55,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
         cell.data = self.data[indexPath.item]
+        
         return cell
     }
     
@@ -66,30 +67,37 @@ class CustomCell: UICollectionViewCell {
         didSet {
             guard let data = data else { return }
             bg.image = data.image
-            
+            //            bg.addShadow()
         }
     }
     
     private let bg: UIImageView = {
-       let iv = UIImageView()
-        iv.addShadow()
+        let iv = UIImageView()
+        //        iv.addShadow()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-                iv.layer.cornerRadius = 12
+        iv.layer.cornerRadius = 12
+        
+        iv.contentMode = .scaleAspectFit
+        iv.layer.shadowColor = UIColor.gray.cgColor
+        iv.layer.shadowOffset = CGSize(width: 13, height: 13)
+        iv.layer.shadowOpacity = 0.8
+        iv.layer.shadowRadius = 6
         return iv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-    
+        
         contentView.addSubview(bg)
-
+        
         bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         bg.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         bg.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         bg.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-       
+        
+        //        bg.addShadow()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,11 +105,11 @@ class CustomCell: UICollectionViewCell {
     }
 }
 
-extension UIView {
-    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 12, height: 12), opacity: Float = 0.8, radius: CGFloat = 12) {
-        layer.shadowColor = shadowColor.cgColor
-        layer.shadowOffset = offset
-        layer.shadowOpacity = opacity
-        layer.shadowRadius = radius
-    }
-}
+//extension UIView {
+//    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 12, height: 12), opacity: Float = 0.8, radius: CGFloat = 12) {
+//        layer.shadowColor = shadowColor.cgColor
+//        layer.shadowOffset = offset
+//        layer.shadowOpacity = opacity
+//        layer.shadowRadius = radius
+//    }
+//}
