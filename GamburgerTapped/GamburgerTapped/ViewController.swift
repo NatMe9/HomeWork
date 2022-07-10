@@ -9,16 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var leading: NSLayoutConstraint!
+    let blurEffect = UIBlurEffect(style: .dark)
+    let blurEffectView = UIVisualEffectView()
     
-    @IBOutlet weak var menu: UIView!
+
+    
+    @IBOutlet weak var leading: NSLayoutConstraint!
     @IBOutlet weak var trailing: NSLayoutConstraint!
     
+    @IBOutlet weak var fon: UIView!
     var gambOut = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        let blurEffect = UIBlurEffect(style: .dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.effect = blurEffect
+        blurEffectView.tag = 100
+        blurEffectView.frame = view.bounds
     }
 
     @IBAction func gambTap(_ sender: Any) {
@@ -30,17 +39,20 @@ class ViewController: UIViewController {
             
             
             
-            let blurEffect = UIBlurEffect(style: .dark)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-
-            blurEffectView.frame = view.bounds
-            view.insertSubview(blurEffectView, at: 0)
-            view.bringSubviewToFront(menu)
+    
+//            view.insertSubview(blurEffectView, at: 0)
+            fon.addSubview(blurEffectView)
         
         } else {
             leading.constant = 0
             trailing.constant = 0
             gambOut = false
+            
+            if let viewWithTag = fon.viewWithTag(100) {
+                    viewWithTag.removeFromSuperview()
+                }else{
+                    print("No!")
+                }
             
         }
         

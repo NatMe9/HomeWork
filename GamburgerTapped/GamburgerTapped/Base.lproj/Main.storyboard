@@ -64,8 +64,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fon" destination="0lA-sl-OZg" id="U1T-oH-B4o"/>
                         <outlet property="leading" destination="cgl-l7-NbO" id="u9P-PH-UVU"/>
-                        <outlet property="menu" destination="0lA-sl-OZg" id="fKU-wH-4MR"/>
                         <outlet property="trailing" destination="Dhk-dP-tBj" id="ton-yG-Zmi"/>
                     </connections>
                 </viewController>
