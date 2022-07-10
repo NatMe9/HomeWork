@@ -54,7 +54,31 @@ class ViewController: UIViewController {
     
     @IBAction func autorisaze(_ sender: Any) {
         
+        let alertController = UIAlertController(title: "Autorisaze", message: "Please enter your email and password", preferredStyle: .alert)
+       
+        let alertOkAction = UIAlertAction(title: "Ok", style: .default)  { (action) in
+            let login = alertController.textFields?.first
+            print(login?.text ?? "login is empty")
+            
+            let password = alertController.textFields?.last
+            print(password?.text ?? "password is empty")
+        }
+        alertController.addAction(alertOkAction)
+        
+        alertController.addTextField(configurationHandler: { (emailTF) in
+            emailTF.placeholder = "Your email adress"
+        
+        })
+        
+        alertController.addTextField(configurationHandler: { (passTF) in
+            passTF.placeholder = "Your password"
+            passTF.isSecureTextEntry = true
+          
+        
+        })
+        present(alertController, animated: true, completion: nil)
     }
+                                     
     
     @IBAction func showAlertOk(_ sender: Any) {
         
@@ -74,14 +98,15 @@ class ViewController: UIViewController {
         
     }
     
-    
 }
 
 extension UIViewController {
     
     func shAlert(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+       
         for (index, title) in actionTitles.enumerated() {
+           
             let action = UIAlertAction(title: title, style: .default, handler: actions[index])
             alert.addAction(action)
         }
