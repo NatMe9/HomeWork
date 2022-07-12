@@ -10,6 +10,7 @@ import UIKit
 
 class GameGonochki: UIViewController {
     
+    
     private let roadWidth: CGFloat = 250
     private var score: Int = 0
     
@@ -80,7 +81,7 @@ class GameGonochki: UIViewController {
     
     private var timer: Timer?
     
-    var resultCompletion: ((Int) -> ())?
+    var scoreRes: ((Int) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +118,7 @@ class GameGonochki: UIViewController {
         bmwLeadingAnchor.constant -= 20
         bmwTrailingAnchor.constant -= 20
         if bmwLeadingAnchor.constant <= -25 {
-            self.resultCompletion?(self.score)
+            self.scoreRes?(self.score)
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -130,7 +131,7 @@ class GameGonochki: UIViewController {
         bmwLeadingAnchor.constant += 20
         bmwTrailingAnchor.constant += 20
         if bmwTrailingAnchor.constant >= 25 {
-            self.resultCompletion?(self.score)
+            self.scoreRes?(self.score)
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -268,10 +269,10 @@ class GameGonochki: UIViewController {
     private func positionStop() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] (timer) in
             
-            // Check for overlapping images
+        
             if let pointStop = self?.stop.layer.presentation()?.frame.intersects(self?.bmw.frame ?? CGRect(x: 0, y: 0, width: 0, height: 0)) {
                 if pointStop == true {
-                    self?.resultCompletion?(self?.score ?? 0)
+                    self?.scoreRes?(self?.score ?? 0)
                     self?.navigationController?.popToRootViewController(animated: true)
                 }
             }

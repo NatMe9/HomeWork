@@ -16,6 +16,7 @@
 		7B2DD77C2870E9F00073F2AC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD77B2870E9F00073F2AC /* Game.swift */; };
 		7B2DD77E2870F03E0073F2AC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD77D2870F03E0073F2AC /* Settings.swift */; };
 		7B2DD78028718DBA0073F2AC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD77F28718DBA0073F2AC /* Result.swift */; };
+		7B3586A1287DBE6100F5E98B /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3586A0287DBE6100F5E98B /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7B2DD77B2870E9F00073F2AC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		7B2DD77D2870F03E0073F2AC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7B2DD77F28718DBA0073F2AC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7B3586A0287DBE6100F5E98B /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				7B2DD77B2870E9F00073F2AC /* Game.swift */,
 				7B2DD77D2870F03E0073F2AC /* Settings.swift */,
 				7B2DD77F28718DBA0073F2AC /* Result.swift */,
+				7B3586A0287DBE6100F5E98B /* Base.swift */,
 				7B2DD76D2870E9880073F2AC /* Main.storyboard */,
 				7B2DD7702870E9890073F2AC /* Assets.xcassets */,
 				7B2DD7722870E9890073F2AC /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				7B2DD7682870E9880073F2AC /* AppDelegate.swift in Sources */,
 				7B2DD76A2870E9880073F2AC /* SceneDelegate.swift in Sources */,
 				7B2DD77C2870E9F00073F2AC /* Game.swift in Sources */,
+				7B3586A1287DBE6100F5E98B /* Base.swift in Sources */,
 				7B2DD77E2870F03E0073F2AC /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

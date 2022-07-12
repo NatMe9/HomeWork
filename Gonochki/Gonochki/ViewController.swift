@@ -50,6 +50,12 @@ class ViewController: UIViewController {
                 return
             }
         
+        viewController.scoreRes = { score in
+            let customString = "Score: \(score)"
+            let attrString = NSMutableAttributedString(string: customString)
+            self.Total.attributedText = attrString
+        }
+        
     
         self.navigationController?.pushViewController(viewController, animated: true)
 //    present(viewController, animated: true)
@@ -59,6 +65,8 @@ class ViewController: UIViewController {
             let viewController = storyboard.instantiateViewController(withIdentifier: "Settings")
         self.navigationController?.pushViewController(viewController, animated: true)
 //        present(viewController, animated: true)
+        
+        
         }
     
     private func showResult() {

@@ -10,11 +10,13 @@ import UIKit
 
 struct keyDefaults {
     static let keyGonshik = "gn"
+    static let keyScore = "sc"
 }
 
 class GameSettings: UIViewController {
   
-    let dedaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
+    
     
     @IBOutlet weak var labelGoncsh: UILabel!
     @IBOutlet weak var buttonSave: UIButton!
@@ -24,7 +26,7 @@ class GameSettings: UIViewController {
         super.viewDidLoad()
       //грузим данные при загрузке экрана
         
-        Gonshik.text = dedaults.string(forKey: keyDefaults.keyGonshik)
+//        Gonshik.text = defaults.string(forKey: keyDefaults.keyGonshik)
         
         
         
@@ -44,8 +46,9 @@ class GameSettings: UIViewController {
         let goncshik = Gonshik.text!
        //проверяем заполнено ли
         if !goncshik.isEmpty {
-            dedaults.set(goncshik, forKey: keyDefaults.keyGonshik)
-            
+            Base.share.saveRes(goncshik: goncshik, score: "")
+            //defaults.set(goncshik, forKey: keyDefaults.keyGonshik)
+            self.navigationController?.popViewController(animated: true)
         }
         
     }

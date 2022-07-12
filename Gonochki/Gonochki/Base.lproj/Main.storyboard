@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWi-Lg-3RB">
-                                <rect key="frame" x="109" y="778" width="196" height="40"/>
+                                <rect key="frame" x="109" y="790" width="196" height="40"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="KR0-LO-Y5s"/>
@@ -56,8 +56,9 @@
                                     <action selector="showResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v1t-KY-Qja"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f01-4O-KFT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f01-4O-KFT">
                                 <rect key="frame" x="137" y="126" width="140" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,7 +75,6 @@
                             <constraint firstItem="f01-4O-KFT" firstAttribute="leading" secondItem="h7I-7z-yvM" secondAttribute="leading" id="UVS-KL-Ecf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7I-7z-yvM" secondAttribute="trailing" constant="136" id="VzJ-QM-j5E"/>
                             <constraint firstItem="rKH-d3-SGr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AWi-Lg-3RB" secondAttribute="leading" id="dgm-3J-m2d"/>
-                            <constraint firstItem="AWi-Lg-3RB" firstAttribute="top" secondItem="rKH-d3-SGr" secondAttribute="bottom" constant="50" id="fBE-1l-Jib"/>
                             <constraint firstItem="rKH-d3-SGr" firstAttribute="centerX" secondItem="f01-4O-KFT" secondAttribute="centerX" id="mDb-T1-r8d"/>
                             <constraint firstItem="AWi-Lg-3RB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="nbC-Nu-BJp"/>
                             <constraint firstItem="rKH-d3-SGr" firstAttribute="top" secondItem="h7I-7z-yvM" secondAttribute="bottom" constant="352" id="odH-El-PFg"/>
@@ -142,6 +142,9 @@
                         <viewLayoutGuide key="safeArea" id="hSP-kf-fBW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableV" destination="jrP-Kq-m7q" id="OCG-OM-ep2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxc-8H-pGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,8 +174,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите имя " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GjT-Ud-m2j">
-                                <rect key="frame" x="100" y="140" width="118" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GjT-Ud-m2j">
+                                <rect key="frame" x="100" y="140" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -204,6 +207,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
