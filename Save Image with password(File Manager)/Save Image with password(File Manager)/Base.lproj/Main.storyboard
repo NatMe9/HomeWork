@@ -56,6 +56,9 @@
                                 <color key="backgroundColor" red="0.61337985594571465" green="0.96950207551238199" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveImage:" destination="cwV-FW-8Kc" eventType="touchUpInside" id="7j7-91-mVw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb4-Mq-7Xt">
                                 <rect key="frame" x="20" y="137" width="374" height="31"/>

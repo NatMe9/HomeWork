@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,13 @@ class ViewController: UIViewController {
     
     @objc private func tapShowPassAlert() {
         
-       let alert = UIAlertController(title: "Your password?", message: "12345678", preferredStyle: .alert)
+       let alert = UIAlertController(title: "Your password?", message: "123", preferredStyle: .alert)
         alert.addTextField()
         alert.textFields?.first?.isSecureTextEntry = true
         let submitAction = UIAlertAction(title: "OKi", style: .default) { _ in
             let password = alert.textFields?.first
             
-            if password?.text == "12345678" {
+            if password?.text == "123" {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 guard let viewController = storyboard.instantiateViewController(withIdentifier: "ImageVC")as? imageView else {
                     return

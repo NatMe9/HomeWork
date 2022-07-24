@@ -14,6 +14,20 @@ class imageView: UIViewController   {
     lazy var imageView = UIImageView(frame: view.frame)
     
     
+    let fileManager = FileManager.default
+    var imagePath: URL?
+    
+    
+    @IBAction func saveImage(_ sender: Any) {
+        
+        guard let data = UIImage(named: "images")?.pngData(),
+              let imagePath = imagePath?.appendingPathComponent("images.png") else { return }
+
+        fileManager.createFile(atPath: imagePath.path, contents: data)
+        print("save good!)")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Pick", style: .plain, target: self, action: #selector(showChooseSourceTypeAlertController))
@@ -23,36 +37,29 @@ class imageView: UIViewController   {
 //         свойства imageView
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
+        
+        setupFileManager()
+        
     }
     
-//    @objc func pickAnImage(){
-//        //            чтобы выбрать изображение, показать этот контроллер выбора
-//        present(imagePicker, animated: true) {
-//            print("UIImagePickerController: presented")
-//        }
+    
+    func setupFileManager() {
+        let documentPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        guard let imagesDirectoryPath = documentPath?.appendingPathComponent("Images") else { return }
+        imagePath = imagesDirectoryPath
+        if !fileManager.fileExists(atPath: imagesDirectoryPath.path) {
+            print("foobar")
+            do {
+                try fileManager.createDirectory(atPath: imagesDirectoryPath.path, withIntermediateDirectories: true)
+            } catch {
+                print("error")
+            }
+        }
     }
     
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-////         метод срабатывает, когда пользователь выбирает изображение и возвращает информацию о выбранном изображении.
-////         Получить атрибут originImage в этом изображении, которым является само изображение
-//        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-//            fatalError("error: did not picked a photo")
-//        }
-//         выполнить другие связанные операции по мере необходимости, выбрать изображение здесь и затем закрыть контроллер выбора
-//        picker.dismiss(animated: true) { [unowned self] in
-////             add a image view on self.view
-//            self.imageView.image = selectedImage
-//
-//    }
-//    }
     
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        // когда пользователь нажимает для отмены
-//        picker.dismiss(animated: true) {
-//            print("UIImagePickerController: dismissed")
-//        }
-//    }
-//    }
+}
+
 
 extension imageView: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @objc func showChooseSourceTypeAlertController() {
@@ -72,6 +79,7 @@ extension imageView: UIImagePickerControllerDelegate, UINavigationControllerDele
         imagePickerController.allowsEditing = true
         imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true, completion: nil)
+        
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
