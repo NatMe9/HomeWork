@@ -272,7 +272,11 @@ class GameGonochki: UIViewController {
         
             if let pointStop = self?.stop.layer.presentation()?.frame.intersects(self?.bmw.frame ?? CGRect(x: 0, y: 0, width: 0, height: 0)) {
                 if pointStop == true {
+                    timer.invalidate()
                     self?.scoreRes?(self?.score ?? 0)
+                    Saver.getSaver.currentScore = (self?.score ?? 0)
+                    Saver.getSaver.saveRes(goncshik: Saver.getSaver.currentGoncshik, score: Saver.getSaver.currentScore)
+
                     self?.navigationController?.popToRootViewController(animated: true)
                 }
             }

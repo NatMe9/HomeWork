@@ -1,5 +1,5 @@
 //
-//  Base.swift
+//  Saver.swift
 //  Gonochki
 //
 //  Created by Natalia Givojno on 12.07.22.
@@ -7,17 +7,20 @@
 
 import Foundation
 
-class Base{
+class Saver{
     
     let defaults = UserDefaults.standard
     
-    static let share = Base()
+    static let getSaver = Saver()
+    var currentGoncshik: String = "NoName"
+    var currentScore: Int = 0
     
     struct UserNameScore:Codable {
         var goncshik: String
-        var score: String
+        var score: Int
+        var dateString: String
         var name:String {
-            return "\(goncshik), \(score) "
+            return "\(goncshik), рез: \(score), дата: \(dateString)"
         }
     }
     
@@ -37,15 +40,18 @@ class Base{
             }
         }
     }
-    func saveRes(goncshik:String, score:String) {
+    
+    
+    
+    //
+    func saveRes(goncshik:String, score:Int) {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d.MM.yy hh:mm"
+        let dateString = dateFormatter.string(from: Date())
         
-        if resulti.first?.goncshik == goncshik {
-            let result = UserNameScore(goncshik: goncshik, score: score)
-            resulti.insert(result, at: 0)
-        }
-        else {
-            let result = UserNameScore(goncshik: goncshik, score: score)
-            resulti.insert(result, at: 0)
-        }
+        let result = UserNameScore(goncshik: goncshik, score: score, dateString: dateString)
+        resulti.insert(result, at: 0)
+
     }
 }
