@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="brauser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTw-el-hlC">
+                                <rect key="frame" x="311" y="59" width="83" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="gAR-hc-rB0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Поиск"/>
+                                <connections>
+                                    <action selector="tapSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rHe-HQ-BBZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AvK-Sr-ikh">
+                                <rect key="frame" x="110" y="59" width="193" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="O2e-26-Tzq"/>
+                                    <constraint firstAttribute="height" constant="34" id="r0m-oo-FIh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZo-AY-QQy">
+                                <rect key="frame" x="20" y="62" width="33" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt;"/>
+                                <connections>
+                                    <action selector="tapBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yaI-Us-2fv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8d-Hh-mbo">
+                                <rect key="frame" x="61" y="62" width="33" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&gt;"/>
+                                <connections>
+                                    <action selector="tapForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VDG-xM-DRk"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgj-54-hHT">
+                                <rect key="frame" x="20" y="101" width="374" height="761"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="top" secondItem="AvK-Sr-ikh" secondAttribute="top" id="1eg-TQ-EkN"/>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="1gG-Np-B9P"/>
+                            <constraint firstItem="Rgj-54-hHT" firstAttribute="top" secondItem="oTw-el-hlC" secondAttribute="bottom" constant="8" symbolic="YES" id="Lig-8I-AcS"/>
+                            <constraint firstItem="AvK-Sr-ikh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r8d-Hh-mbo" secondAttribute="trailing" constant="2" id="M23-QJ-pRu"/>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="bottom" secondItem="CZo-AY-QQy" secondAttribute="bottom" id="WPU-9n-0Fj"/>
+                            <constraint firstItem="CZo-AY-QQy" firstAttribute="leading" secondItem="Rgj-54-hHT" secondAttribute="leading" id="Zlv-uj-klw"/>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="bottom" secondItem="AvK-Sr-ikh" secondAttribute="bottom" id="aa3-wO-p5x"/>
+                            <constraint firstItem="r8d-Hh-mbo" firstAttribute="leading" secondItem="CZo-AY-QQy" secondAttribute="trailing" constant="8" symbolic="YES" id="apL-2G-kpB"/>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="bottom" secondItem="r8d-Hh-mbo" secondAttribute="bottom" id="bMv-Hm-ePL"/>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="trailing" secondItem="Rgj-54-hHT" secondAttribute="trailing" id="eBY-tB-SyL"/>
+                            <constraint firstItem="Rgj-54-hHT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="htw-Rn-cc3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rgj-54-hHT" secondAttribute="trailing" constant="20" id="lbp-cJ-FKN"/>
+                            <constraint firstItem="Rgj-54-hHT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="r1K-hr-LMI"/>
+                            <constraint firstItem="oTw-el-hlC" firstAttribute="leading" secondItem="AvK-Sr-ikh" secondAttribute="trailing" constant="8" symbolic="YES" id="u8s-Pn-tu8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="AvK-Sr-ikh" id="HLt-pS-wMg"/>
+                        <outlet property="webView" destination="Rgj-54-hHT" id="f2E-tf-aUJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
