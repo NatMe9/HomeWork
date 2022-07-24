@@ -46,7 +46,8 @@ class GameSettings: UIViewController {
         let goncshik = Gonshik.text!
        //проверяем заполнено ли
         if !goncshik.isEmpty {
-            Base.share.saveRes(goncshik: goncshik, score: "")
+//            Saver.getSaver.saveRes(goncshik: goncshik, score: "")
+            Saver.getSaver.currentGoncshik = goncshik
             //defaults.set(goncshik, forKey: keyDefaults.keyGonshik)
             self.navigationController?.popViewController(animated: true)
         }

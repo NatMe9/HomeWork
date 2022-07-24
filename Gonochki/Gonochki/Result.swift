@@ -32,7 +32,7 @@ class GameResult:UIViewController {
 extension GameResult: UITableViewDataSource, UITableViewDelegate {
     
     func tableView (_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Base.share.resulti.count
+        return Saver.getSaver.resulti.count
     }
     
     func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
@@ -43,7 +43,7 @@ extension GameResult: UITableViewDataSource, UITableViewDelegate {
             cell = UITableViewCell()
         }
         
-        cell.textLabel!.text = Base.share.resulti[indexPath.row].name
+        cell.textLabel!.text = Saver.getSaver.resulti[indexPath.row].name
         return cell
     }
     
