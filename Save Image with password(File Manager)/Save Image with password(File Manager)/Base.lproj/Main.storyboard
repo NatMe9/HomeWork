@@ -45,27 +45,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-tG-Hda">
-                                <rect key="frame" x="20" y="290" width="374" height="536"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-tG-Hda">
+                                <rect key="frame" x="20" y="270" width="374" height="536"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="536" id="aKf-uo-pFh"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnu-OZ-xgW">
-                                <rect key="frame" x="20" y="75" width="374" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnu-OZ-xgW">
+                                <rect key="frame" x="20" y="75" width="374" height="31"/>
                                 <color key="backgroundColor" red="0.61337985594571465" green="0.96950207551238199" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SAVE"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb4-Mq-7Xt">
-                                <rect key="frame" x="20" y="137" width="374" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb4-Mq-7Xt">
+                                <rect key="frame" x="20" y="137" width="374" height="31"/>
                                 <color key="backgroundColor" red="0.61337985589999999" green="0.9695020755" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ADD"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ9-g3-V0I">
-                                <rect key="frame" x="20" y="205" width="374" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ9-g3-V0I">
+                                <rect key="frame" x="20" y="195" width="374" height="31"/>
                                 <color key="backgroundColor" red="0.61337985589999999" green="0.9695020755" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="DELETE"/>
@@ -73,6 +72,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m9z-NK-gAI"/>
                         <color key="backgroundColor" red="0.78101696225629658" green="1" blue="0.97889958723144688" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="m9z-NK-gAI" firstAttribute="trailing" secondItem="bb4-Mq-7Xt" secondAttribute="trailing" constant="20" id="10M-mH-LB1"/>
+                            <constraint firstItem="bb4-Mq-7Xt" firstAttribute="top" secondItem="rnu-OZ-xgW" secondAttribute="bottom" constant="31" id="4yH-zw-BpM"/>
+                            <constraint firstItem="fJ9-g3-V0I" firstAttribute="top" secondItem="bb4-Mq-7Xt" secondAttribute="bottom" constant="27" id="5vu-oT-Y4e"/>
+                            <constraint firstItem="XKH-tG-Hda" firstAttribute="top" secondItem="fJ9-g3-V0I" secondAttribute="bottom" constant="44" id="Ba3-ci-8lY"/>
+                            <constraint firstItem="XKH-tG-Hda" firstAttribute="leading" secondItem="m9z-NK-gAI" secondAttribute="leading" constant="20" id="Db2-aa-M63"/>
+                            <constraint firstItem="m9z-NK-gAI" firstAttribute="trailing" secondItem="XKH-tG-Hda" secondAttribute="trailing" constant="20" id="IWs-ZS-cP9"/>
+                            <constraint firstItem="fJ9-g3-V0I" firstAttribute="leading" secondItem="m9z-NK-gAI" secondAttribute="leading" constant="20" id="LM9-ug-bwx"/>
+                            <constraint firstItem="m9z-NK-gAI" firstAttribute="trailing" secondItem="fJ9-g3-V0I" secondAttribute="trailing" constant="20" id="PQc-bN-cTf"/>
+                            <constraint firstItem="bb4-Mq-7Xt" firstAttribute="leading" secondItem="m9z-NK-gAI" secondAttribute="leading" constant="20" id="eRM-jH-KdR"/>
+                            <constraint firstItem="rnu-OZ-xgW" firstAttribute="leading" secondItem="m9z-NK-gAI" secondAttribute="leading" constant="20" id="fOX-N0-uuV"/>
+                            <constraint firstItem="m9z-NK-gAI" firstAttribute="trailing" secondItem="rnu-OZ-xgW" secondAttribute="trailing" constant="20" id="lLD-KG-xhZ"/>
+                            <constraint firstItem="rnu-OZ-xgW" firstAttribute="top" secondItem="m9z-NK-gAI" secondAttribute="top" constant="31" id="qRx-JW-pFQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0MF-up-x31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
